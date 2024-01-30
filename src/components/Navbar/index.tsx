@@ -22,6 +22,20 @@ const Navbar = () => {
         },
       ],
     },
+    {
+      label: "link2",
+      linkUrl: "#",
+      detail: [
+        {
+          labellink: "test",
+          linkUrltst: "#",
+        },
+        {
+          labellink: "test",
+          linkUrltst: "#",
+        },
+      ],
+    },
   ];
 
   return (
@@ -74,7 +88,9 @@ const Navbar = () => {
             ))}
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl">daisyUI</a>
+        <a className="btn btn-ghost text-xl">
+          Travello<span className="text-primary text-xl font-bold">FLY</span>
+        </a>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
@@ -105,7 +121,9 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="navbar-end">
-        <a className="btn">Button</a>
+        <Link href={"#"} className="btn">
+          Subscribe
+        </Link>
       </div>
     </div>
   );
