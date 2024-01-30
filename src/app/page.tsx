@@ -109,8 +109,8 @@ export default function Home() {
             FLYMOON
           </h1>
           <p>
-            Rasakan Penerbangan Terbaik Anda bersama{" "}
-            <span className="text-primary font-semibold">TravelloFLY</span>
+            Rasakan Penerbangan Terbaik Anda Bersama{" "}
+            <span className="text-primary font-semibold">TravelloFLY</span>.
           </p>
         </div>
       </section>
