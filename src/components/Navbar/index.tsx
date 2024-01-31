@@ -1,43 +1,8 @@
 import Link from "next/link";
 import React from "react";
+import RouteLinkList from "./routeLinkList";
 
 const Navbar = () => {
-  const routeLink = [
-    {
-      label: "link",
-      linkUrl: "#",
-      detail: null,
-    },
-    {
-      label: "link2",
-      linkUrl: "#",
-      detail: [
-        {
-          labellink: "test",
-          linkUrltst: "#",
-        },
-        {
-          labellink: "test",
-          linkUrltst: "#",
-        },
-      ],
-    },
-    {
-      label: "link2",
-      linkUrl: "#",
-      detail: [
-        {
-          labellink: "test",
-          linkUrltst: "#",
-        },
-        {
-          labellink: "test",
-          linkUrltst: "#",
-        },
-      ],
-    },
-  ];
-
   return (
     <div className="navbar bg-base-100 w-full shadow">
       <div className="navbar-start">
@@ -62,30 +27,7 @@ const Navbar = () => {
             tabIndex={0}
             className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
           >
-            {routeLink.map((item, index) => (
-              <React.Fragment key={index}>
-                {item.detail ? (
-                  <li key={`${index}-submenu`}>
-                    <details>
-                      <summary>{item.label}</summary>
-                      <ul className="p-2">
-                        {item.detail.map((submenuItem, subIndex) => (
-                          <li key={`${index}-${subIndex}`}>
-                            <Link href={submenuItem.linkUrltst}>
-                              {submenuItem.labellink}
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
-                    </details>
-                  </li>
-                ) : (
-                  <li key={`${index}-no-submenu`}>
-                    <Link href={item.linkUrl}>{item.label}</Link>
-                  </li>
-                )}
-              </React.Fragment>
-            ))}
+            <RouteLinkList />
           </ul>
         </div>
         <a className="btn btn-ghost text-xl">
@@ -94,30 +36,7 @@ const Navbar = () => {
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
-          {routeLink.map((item, index) => (
-            <React.Fragment key={index}>
-              {item.detail ? (
-                <li key={`${index}-submenu`}>
-                  <details>
-                    <summary>{item.label}</summary>
-                    <ul className="p-2">
-                      {item.detail.map((submenuItem, subIndex) => (
-                        <li key={`${index}-${subIndex}`}>
-                          <Link href={submenuItem.linkUrltst}>
-                            {submenuItem.labellink}
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
-                  </details>
-                </li>
-              ) : (
-                <li key={`${index}-no-submenu`}>
-                  <Link href={item.linkUrl}>{item.label}</Link>
-                </li>
-              )}
-            </React.Fragment>
-          ))}
+          <RouteLinkList />
         </ul>
       </div>
       <div className="navbar-end">
